@@ -1,9 +1,18 @@
-{
-    "kurssit": [{
+[
+    {
         "nimi":"JTKT",
         "op":5,
-        "luennot":[3],
-        "laskarit":[1],
-        "tentti":53
-    }]
-}
+        "maksimipisteet": 100,
+        "luennot":["ma", "ti"],
+        "palautukset":["ma"],
+        "tentti": true
+    },
+    {
+        "nimi":"JYM",
+        "op":5,
+        "maksimipisteet": 120,
+        "luennot":["ke", "to"],
+        "palautukset":["pe"],
+        "tentti": true
+    }
+]
