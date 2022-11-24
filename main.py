@@ -3,7 +3,9 @@ OPISKELIJA = None
 KURSSIT = []
 PERIODI = 1
 
+from glob import glob
 import json
+from time import sleep
 from kurssi import Kurssi
 from opiskelija import Opiskelija
 import weekController
@@ -25,6 +27,9 @@ def day():
     global OPISKELIJA
     global PERIODI
 
+    if(PÄIVÄ == 1):
+        alusta_periodi(PERIODI)
+
     if(PÄIVÄ%60 == 0 ):
         OPISKELIJA.lopeta_periodi()
         PERIODI += 1
@@ -38,7 +43,7 @@ def day():
     print(OPISKELIJA)
 
     #tulostaa menossa olevat kurssit
-    print(OPISKELIJA.kurssit_meneillään_tulostus())
+    print(OPISKELIJA.kurssit_meneillaan_tulostus())
 
     #tulostaa viikon tapahtumat -milloin palautus - milloin luennot
     weekController.printPäivä(PÄIVÄ, OPISKELIJA)
@@ -54,13 +59,20 @@ def day():
         OPISKELIJA.terveys += 10 * (unen_maara-6)
 
     #kysyy ajan allokointia kurssi kerrallaan ja käytökö luennolla
-
+    sleep(5)
     os.system('clear')
 
     PÄIVÄ += 1
 
 def setup():
+    global PÄIVÄ
     global OPISKELIJA
+    global KURSSIT
+    global PERIODI
+
+    KURSSIT = []
+    PÄIVÄ = 1
+    PERIODI = 1
 
     nimi = input('Ketä oot:')
     OPISKELIJA = Opiskelija(nimi)
@@ -73,13 +85,13 @@ def setup():
 #palauttaa unen määrän
 def maarita_kursseihin_kautettava_aika(opiskelija,nykyinen_pv):
     paivan_tunnit = 24
-    for kurssi in opiskelija.kurssit_meneillään:
+    for kurssi in opiskelija.kurssit_meneillaan:
         print(f'Määritä kurssin {kurssi.nimi} panos:')
         if nykyinen_pv in kurssi.luennot and paivan_tunnit >= 2:
             while True:
                 print('Osallistutko päivän luennolle?')
                 valinta = input('Y/N: ')
-                if valinta == 'Y' and op:
+                if valinta == 'Y':
                     paivan_tunnit -= 2
                     kurssi.kayta_aikaa(2)
                     break
@@ -88,12 +100,13 @@ def maarita_kursseihin_kautettava_aika(opiskelija,nykyinen_pv):
             
             while True:
                 try:
-                    harjoituksiin_kaytetty_aika = int(input('Paljon aikaa aiot käyttää tämän viikon palautuksiin? Jäljellä olevaan allokoitavaa aikaa on: {paivan_tunnit}'))
+                    harjoituksiin_kaytetty_aika = int(input(f"Paljon aikaa aiot käyttää tämän viikon palautuksiin? Jäljellä olevaan allokoitavaa aikaa on: {paivan_tunnit}"))
                     if harjoituksiin_kaytetty_aika > paivan_tunnit:
                         pass
                     else:
                         kurssi.kayta_aikaa(harjoituksiin_kaytetty_aika)
                         paivan_tunnit -= harjoituksiin_kaytetty_aika
+                        break
                 except:
                     pass
     return paivan_tunnit
