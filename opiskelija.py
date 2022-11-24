@@ -31,12 +31,13 @@ class Opiskelija:
 
     def luennot_väliltä(self, alku, loppu):
         luennot={}
-        luentopäivät={}
         for kurssi in self.kurssit_meneillään:
             for luento in kurssi.luennot:
                 if alku<=luento<=loppu:
-                    luentopäivät.update(luento:luentopäivät[luento]+kurssi.nimi)
-                    luennot[luento]=kurssi.nimi
+                    if luento in luennot.keys:
+                        luennot[luento].append(kurssi.nimi)
+                    else:
+                        luennot[luento]=[kurssi.nimi]
 
                     
 
