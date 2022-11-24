@@ -1,0 +1,10 @@
+{
+    "kurssit": [{
+        "nimi":"JTKT",
+        "op":5,
+        "deadline":60,
+        "luennot":[1,8,15,22,36],
+        "laskarit":[4,11,18,25,32,39,46],
+        "tentti":53
+    }]
+}
