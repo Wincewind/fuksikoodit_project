@@ -23,6 +23,7 @@ def alusta_periodi(numero):
 def day():
     global PÄIVÄ
     global OPISKELIJA
+    global PERIODI
 
     if(PÄIVÄ%60 == 0 ):
         OPISKELIJA.lopeta_periodi()
@@ -55,6 +56,8 @@ def day():
     #kysyy ajan allokointia kurssi kerrallaan ja käytökö luennolla
 
     os.system('clear')
+
+    PÄIVÄ += 1
 
 def setup():
     global OPISKELIJA
@@ -93,7 +96,7 @@ def maarita_kursseihin_kautettava_aika(opiskelija,nykyinen_pv):
                         paivan_tunnit -= harjoituksiin_kaytetty_aika
                 except:
                     pass
-        return paivan_tunnit
+    return paivan_tunnit
 
 
 def main():
