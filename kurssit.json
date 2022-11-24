@@ -1,0 +1,9 @@
+{
+    "kurssit": [{
+        "nimi":"JTKT",
+        "op":5,
+        "luennot":[3],
+        "laskarit":[1],
+        "tentti":53
+    }]
+}

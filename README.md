@@ -18,11 +18,8 @@ Opiskelijalla ominaisuuksia: nimi, opintopisteet, suoritetut kurssit, terveys (x
 ## Kurssi-olio (mallia voi varmaan katsoa Mooc matskuista)
 nimi, op, arvosana, kysymysten/tehtävien lkm (mitä tarvitaan kurssin suoritukseen?)
 deadline
-
-## Tehtävät
-* Ohpe: yksinkertaisia ohjelmointi kysymyksiä joihin tulee vastata esim. mitä jostain printtaantuu,
-* JTKT: 
-* 
+harjoitukset kyllä/ei
+luento kyllä/ei
 
 ## Tapahtumat
 * Voi tapahtua randomisti kerran viikossa
