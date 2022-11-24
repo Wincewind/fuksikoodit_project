@@ -1,4 +1,4 @@
-PÄIVÄ = 1
+PÄIVÄ = 0
 OPISKELIJA = None
 KURSSIT = []
 PERIODI = 1
@@ -19,7 +19,13 @@ def alusta_periodi(numero):
 
 
 #game tick tässä tapauksessa yksi päivä
-def tick():
+def day():
+
+    if(PÄIVÄ%60 == 0 ):
+        OPISKELIJA.lopeta_periodi()
+        PERIODI += 1
+        alusta_periodi(PERIODI)
+
 
     #tulosta päivä
     print(f'Tänään on päivä {PÄIVÄ}')
@@ -31,7 +37,7 @@ def tick():
     print(OPISKELIJA.menossaolevien_kurssien_tiedot())
 
     #tulostaa viikon tapahtumat -milloin palautus - milloin luennot
-    weekController.printViiko()
+    weekController.printPäivä()
 
     #Tulostaa käytössä olevat tunnit
 
@@ -40,7 +46,7 @@ def tick():
     #Laskee nukkumiseen jäävän ajan ja kysyy kuinka paljon haluaa käyttää
 
 def setup():
-    nimi = input('Mikä on nimesi:')
+    nimi = input('Ketä oot:')
     OPISKELIJA = Opiskelija(nimi)
 
     with open('kurssit.json') as json_file:
