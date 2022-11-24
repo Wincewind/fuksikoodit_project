@@ -13,7 +13,7 @@ class Kurssi:
     def __init__(self, json):
         self.nimi = json['nimi']
         self.pisteet = 0
-        self.maksimipisteet: json['maksimipisteet']
+        self.maksimipisteet = json['maksimipisteet']
         self.op = json['op']
         self.palautukset = {}
         self.luennot = []
@@ -47,7 +47,7 @@ class Kurssi:
 
         palautuksen_pisteet = self.maksimipisteet/len(self.palautukset)
 
-        for palautus in self.palautukset:
+        for palautus in self.palautukset.values():
             palautus.pisteet = palautuksen_pisteet
 
         self.tentti = 0

@@ -46,7 +46,8 @@ def day():
     print(OPISKELIJA.kurssit_meneillaan_tulostus())
 
     #tulostaa viikon tapahtumat -milloin palautus - milloin luennot
-    weekController.printPäivä(PÄIVÄ, OPISKELIJA)
+    weekController.printPaiva(PÄIVÄ, OPISKELIJA)
+    print('')
 
     #Tulostaa käytössä olevat tunnit
     unen_maara = maarita_kursseihin_kautettava_aika(OPISKELIJA, PÄIVÄ)
@@ -86,21 +87,21 @@ def setup():
 def maarita_kursseihin_kautettava_aika(opiskelija,nykyinen_pv):
     paivan_tunnit = 24
     for kurssi in opiskelija.kurssit_meneillaan:
-        print(f'Määritä kurssin {kurssi.nimi} panos:')
         if nykyinen_pv in kurssi.luennot and paivan_tunnit >= 2:
+            print(f'Määritä kurssin {kurssi.nimi} panos:')
             while True:
-                print('Osallistutko päivän luennolle?')
-                valinta = input('Y/N: ')
-                if valinta == 'Y':
+                print(f"Osallistutko päivän {kurssi.nimi} luennolle?")
+                valinta = input('Y/N: ').lower()
+                if valinta == 'y':
                     paivan_tunnit -= 2
                     kurssi.kayta_aikaa(2)
                     break
-                elif valinta == 'N':
+                elif valinta == 'n':
                     break
             
             while True:
                 try:
-                    harjoituksiin_kaytetty_aika = int(input(f"Paljon aikaa aiot käyttää tämän viikon palautuksiin? Jäljellä olevaan allokoitavaa aikaa on: {paivan_tunnit}"))
+                    harjoituksiin_kaytetty_aika = int(input(f"Paljon aikaa aiot käyttää tämän viikon {kurssi.nimi} palautuksiin? \nJäljellä olevaan allokoitavaa aikaa on  {paivan_tunnit} tuntio\n:"))
                     if harjoituksiin_kaytetty_aika > paivan_tunnit:
                         pass
                     else:
