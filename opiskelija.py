@@ -27,7 +27,7 @@ class Opiskelija:
 
 
     def kurssit_meneillään_tulostus(self):
-        meneillään=""
+        meneillään=""for palautus in
         for kurssi in self.kurssit_meneillään:
             meneillään+=kurssi+"\n"
         return meneillään
@@ -37,11 +37,11 @@ class Opiskelija:
         for kurssi in self.kurssit_meneillään:
             for luento in kurssi.luennot:
                 if alku<=luento<=loppu:
-                    if luento in luennot.keys:
+                    if luento in luennot.keys():
                         luennot[luento].append(kurssi.nimi)
                     else:
                         luennot[luento]=[kurssi.nimi]
-                        
+        return luennot
                     
 
     def alusta_periodin_kurssit(self, kurssit: Kurssi):
@@ -59,5 +59,12 @@ class Opiskelija:
             for luento in kurssi.luennot:
                 if luento==päivä:
                     luennot.append(luento)
+        return luennot
 
-                    
+    def päivän_palautukset(self, päivä):
+        palautukset=[]
+        for kurssi in self.kurssit_meneillään:
+            if päivä in kurssi.palautukset.keys():
+                palautukset.append(kurssi.palautukset[päivä])
+        return palautukset
+
