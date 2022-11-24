@@ -20,4 +20,6 @@ def printPaiva(tämä_päivä, opiskelija):
         print(f"Tänään on kurssien: {palautuksetStr} palautukset.")
     else:
         print('Tänään ei ole palautuksia')
+
+    
         

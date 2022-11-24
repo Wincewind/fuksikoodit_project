@@ -30,14 +30,10 @@ def day():
     if(PÄIVÄ == 1):
         alusta_periodi(PERIODI)
 
-    if(PÄIVÄ%60 == 0 ):
-        OPISKELIJA.lopeta_periodi()
-        PERIODI += 1
-        alusta_periodi(PERIODI)
-
 
     #tulosta päivä
     print(f'Tänään on päivä {PÄIVÄ}')
+    print(f"Nyt on periodi {PERIODI}")
 
     #tulosta opiskelijan tiedot
     print(OPISKELIJA)
@@ -64,6 +60,11 @@ def day():
     os.system('clear')
 
     PÄIVÄ += 1
+
+    if(PÄIVÄ%60 == 0 ):
+        OPISKELIJA.lopeta_periodi()
+        PERIODI += 1
+        alusta_periodi(PERIODI)
 
 def setup():
     global PÄIVÄ
