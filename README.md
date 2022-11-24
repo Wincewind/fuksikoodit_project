@@ -19,10 +19,6 @@ Opiskelijalla ominaisuuksia: nimi, opintopisteet, suoritetut kurssit, terveys (x
 nimi, op, arvosana, kysymysten/tehtävien lkm (mitä tarvitaan kurssin suoritukseen?)
 deadline
 
-## Tehtävät
-* Ohpe: yksinkertaisia ohjelmointi kysymyksiä joihin tulee vastata esim. mitä jostain printtaantuu,
-* JTKT: 
-* 
 
 ## Tapahtumat
 * Voi tapahtua randomisti kerran viikossa
