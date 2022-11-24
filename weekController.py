@@ -6,8 +6,8 @@ def tulostaViikko(tämä_päivä, opiskelija):
     for i, paiva in enumerate(viikonpäivät):
         print(f"{paiva} | Luennot:{luennot[tämä_päivä+i].join(' ')} | Palautukset:{palautukset[tämä_päivä+1].join(' ')}")
 
-def printPäivä(tämä_päivä, opiskelija):
-    luennotLista = opiskelija.paivan_palautukset(tämä_päivä)
+def printPaiva(tämä_päivä, opiskelija):
+    luennotLista = opiskelija.paivan_luennot(tämä_päivä)
     luennot = ",".join(luennotLista)
     if len(luennot) > 0:
         print(f"Tänään on kurssien: {luennot} luennot.")
@@ -20,4 +20,6 @@ def printPäivä(tämä_päivä, opiskelija):
         print(f"Tänään on kurssien: {palautuksetStr} palautukset.")
     else:
         print('Tänään ei ole palautuksia')
+
+    
         
