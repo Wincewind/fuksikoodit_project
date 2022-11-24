@@ -1,3 +1,6 @@
+from kurssi import Kurssi
+
+
 class Opiskelija:
 
 
@@ -38,24 +41,6 @@ class Opiskelija:
                     luentopäivät.update(luento:luentopäivät[luento]+kurssi.nimi)
                     luennot[luento]=kurssi.nimi
 
-                    
-
-
-
-    print(nimi)
-    print("Suoritat kursseja")
-    for kurssi in kurssit_meneillään:
-        print(kurssi)
-
-    print("Terveys: " + str(terveys) + "/100")
-    print("Motivaatio: " + str(motivaatio) + "/100")
-    print("Stressi: " + str(stressi))
-
-    print("Opintopisteitä kasassa: " + str(opintopisteet))
-    print("Olet suorittanut kurssit:")
-    for kurssi in suoritetut_kurssit:
-        print(kurssi)
-
-
-opiskelija = Opiskelija('matti')
-print(opiskelija)
+    def alusta_periodin_kurssit(self, kurssit: Kurssi):
+        self.suoritetut_kurssit = self.kurssit_meneillään
+        self.kurssit_meneillään = kurssit

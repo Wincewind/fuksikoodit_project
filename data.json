@@ -1,0 +1,28 @@
+{
+    "tapahtumat":[
+        {
+            "nimi": "Osallistu fuksisuunnistukseen",
+            "kuvaus" : "....",
+            "valinnat": [
+                {
+                    "nimi" : "Kyllä",
+                    "efekti" :{
+                        motivaatio: 30,
+                        tervesy: -20,
+                        stressi: 10,
+
+                    }
+                },
+                {
+                    "nimi" : "Ei",
+                    "efekti" :{
+                        motivaatio: 30,
+                        tervesy: -20,
+                        stressi: 10,
+
+                    }
+                }
+            ]
+        }
+    ]
+}

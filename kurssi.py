@@ -7,14 +7,6 @@ class Kurssi:
         self.pisteet = 0
         self.maksimipisteet: json.maksimipisteet
         self.op = json.opintopisteet
-        self.palautukset = 
-        self.laskarit = [
-            {
-                "numero": 1,
-                "palautettu": False,
-                "pisteet": 10
-            }
-        ]
         self.luennot = []
         self.tentti = 0
 
