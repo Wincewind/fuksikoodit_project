@@ -1,4 +1,4 @@
-PÄIVÄ = 0
+PÄIVÄ = 1
 OPISKELIJA = None
 KURSSIT = []
 PERIODI = 1
@@ -21,6 +21,8 @@ def alusta_periodi(numero):
 
 #game tick tässä tapauksessa yksi päivä
 def day():
+    global PÄIVÄ
+    global OPISKELIJA
 
     if(PÄIVÄ%60 == 0 ):
         OPISKELIJA.lopeta_periodi()
@@ -35,10 +37,10 @@ def day():
     print(OPISKELIJA)
 
     #tulostaa menossa olevat kurssit
-    print(OPISKELIJA.menossaolevien_kurssien_tiedot())
+    print(OPISKELIJA.kurssit_meneillään_tulostus())
 
     #tulostaa viikon tapahtumat -milloin palautus - milloin luennot
-    weekController.printPäivä()
+    weekController.printPäivä(PÄIVÄ, OPISKELIJA)
 
     #Tulostaa käytössä olevat tunnit
     unen_maara = maarita_kursseihin_kautettava_aika(OPISKELIJA, PÄIVÄ)
@@ -55,6 +57,8 @@ def day():
     os.system('clear')
 
 def setup():
+    global OPISKELIJA
+
     nimi = input('Ketä oot:')
     OPISKELIJA = Opiskelija(nimi)
 

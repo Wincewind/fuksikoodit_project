@@ -7,7 +7,7 @@ def tulostaViikko(tämä_päivä, opiskelija):
         print(f"{paiva} | Luennot:{luennot[tämä_päivä+i].join(' ')} | Palautukset:{palautukset[tämä_päivä+1].join(' ')}")
 
 def printPäivä(tämä_päivä, opiskelija):
-    luennot = opiskelija.päivän_luennot(tämä_päivä)
-    print(f"Tänään on kurssien: {luennot.join(',')} luennot.")
-    luennot = opiskelija.päivän_palautukset(tämä_päivä)
-    print(f"Tänään on kurssien: {luennot.join(',')} palautukset.")
+    luennot = ",".join(opiskelija.päivän_luennot(tämä_päivä))
+    print(f"Tänään on kurssien: {luennot} luennot.")
+    palautukset = ",".join(opiskelija.päivän_palautukset(tämä_päivä))
+    print(f"Tänään on kurssien: {palautukset} palautukset.")
