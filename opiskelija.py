@@ -48,3 +48,16 @@ class Opiskelija:
         self.suoritetut_kurssit = self.kurssit_meneillään
         self.kurssit_meneillään = kurssit
 
+    def lopeta_periodi(self):
+        for kurssi in self.kurssit_meneillään:
+            kurssi.lopeta_kurssi()
+            self.suoritetut_kurssit.append(kurssi)
+    
+    def päivän_luennot(self, päivä):
+        luennot=[]
+        for kurssi in self.kurssit_meneillään:
+            for luento in kurssi.luennot:
+                if luento==päivä:
+                    luennot.append(luento)
+
+                    
