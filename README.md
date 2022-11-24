@@ -21,11 +21,6 @@ deadline
 harjoitukset kyllä/ei
 luento kyllä/ei
 
-## Tehtävät
-* Ohpe: yksinkertaisia ohjelmointi kysymyksiä joihin tulee vastata esim. mitä jostain printtaantuu,
-* JTKT: 
-* 
-
 ## Tapahtumat
 * Voi tapahtua randomisti kerran viikossa
 * Mahdollisuus ilmestyä viikon aikana, voidaan valita esim. osallistutaanko tapahtumaan +/- efektit
