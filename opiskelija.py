@@ -27,7 +27,7 @@ class Opiskelija:
 
 
     def kurssit_meneillään_tulostus(self):
-        meneillään=""for palautus in
+        meneillään=""
         for kurssi in self.kurssit_meneillään:
             meneillään+=kurssi+"\n"
         return meneillään
