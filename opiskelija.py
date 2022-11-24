@@ -45,6 +45,5 @@ class Opiskelija:
                     
 
     def alusta_periodin_kurssit(self, kurssit: Kurssi):
-        self.suoritetut_kurssit = self.kurssit_meneillään
         self.kurssit_meneillään = kurssit
 
