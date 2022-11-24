@@ -56,6 +56,12 @@ class Kurssi:
     def get_arvosana(self):
         return 0
 
+    def kayta_aikaa(self, aika):
+        self.kaytetyt_tunnit += aika
+
+    def lopeta_kurssi(self):
+        pass
+
     arvosana = property(get_arvosana)
 
 
