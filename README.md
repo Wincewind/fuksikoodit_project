@@ -1,8 +1,10 @@
 # fuksikoodit_project
 
 #Game loop
-yksipäivä
-pitää valita mitä tekee
+Ajan käyttö ja terveyden hallinnointi
+Edetään viikko kerrallaan
+pitää valita mitä tekee per päivä
+tapahtuma tai suorittaa kurssia
 
 
 Tekstipohjainen peli jonka ideana selvitytyä ja kerätä opintopisteitä.
@@ -20,8 +22,11 @@ deadline
 ## Tehtävät
 * Ohpe: yksinkertaisia ohjelmointi kysymyksiä joihin tulee vastata esim. mitä jostain printtaantuu,
 * JTKT: 
+* 
 
 ## Tapahtumat
 * Voi tapahtua randomisti kerran viikossa
 * Mahdollisuus ilmestyä viikon aikana, voidaan valita esim. osallistutaanko tapahtumaan +/- efektit
-* Esim. paikka vapautui KJYR
+*  Esim. paikka vapautui KJYR, osallistutko kyllä/ei, efektit: loppuviikon opintosuorituksia ei oteta huomioon, motivaatio + (tulisiko näyttää?)
+*  
+* 
