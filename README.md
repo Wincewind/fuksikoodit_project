@@ -23,4 +23,5 @@ deadline
 
 ## Tapahtumat
 * Voi tapahtua randomisti kerran viikossa
-* 
+* Mahdollisuus ilmestyä viikon aikana, voidaan valita esim. osallistutaanko tapahtumaan +/- efektit
+* Esim. paikka vapautui KJYR
