@@ -48,7 +48,24 @@ def setup():
         for kurssi in kurssit:
             KURSSIT.append(Kurssi(kurssi))
 
-    
+def maarita_kursseihin_kautettava_aika(opiskelija,nykyinen_pv):
+    for kurssi in opiskelija.kurssit_meneillään:
+        opiskeluun_kaytetty_aika = 0
+        print(f'Määritä kurssin: {kurssi.nimi} panos:')
+        if nykyinen_pv in kurssi.luennot:
+            while True:
+                print('Osallistutko päivän luennolle?')
+                valinta = input('Y/N: ')
+                if valinta == 'Y':
+                    opiskeluun_kaytetty_aika += 2
+                    break
+            
+            while True:
+                try:
+                    harjoituksiin_kaytetty_aika = int(input('Paljon aikaa aiot käyttää tämän viikon palautuksiin?'))
+                    opiskeluun_kaytetty_aika += harjoituksiin_kaytetty_aika
+                except:
+                    pass
 
 
 def main():
