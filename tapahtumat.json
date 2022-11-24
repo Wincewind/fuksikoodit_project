@@ -1,0 +1,89 @@
+[
+    {
+        "kuvaus":"Tänään järjestetään Fuksikasuaali, osallistutko?",
+        "kesto": 7,
+        "vaihtoehdot":
+        [
+            {
+                "valinta":"kyllä",
+                "efekti":
+                {
+                    "motivaatio":30
+                }
+            },
+            {
+                "valinta":"ei",
+                "efekti":
+                {
+                    "motivaatio":-10
+                }
+            }
+        ]
+    },
+    {
+        "kuvaus":"KJYR:iltä vapautui paikka, lähdetkö mukaan?",
+        "kesto": 48,
+        "vaihtoehdot":
+        [
+            {
+                "valinta":"kyllä",
+                "efekti":
+                {
+                    "motivaatio":100,
+                    "terveys":-40
+                }
+            },
+            {
+                "valinta":"ei",
+                "efekti":
+                {
+                    "motivaatio":-40
+                }
+            }
+        ]
+    },
+    {
+        "kuvaus":"Fuksitsit ovat ensi sunnuntaina. Lähdetkö mukaan?",
+        "kesto": 7,
+        "vaihtoehdot":
+        [
+            {
+                "valinta":"lähden!",
+                "efekti":
+                {
+                    "motivaatio":70,
+                    "terveys":-30
+                }
+            },
+            {
+                "valinta":"Laulua? ei kiitos.",
+                "efekti":
+                {
+                    "motivaatio":-40
+                }
+            }
+        ]
+    },
+    {
+        "kuvaus":"Matkalla kaupasta tapaat vanhoja tuttuja. Lähdetkö mukaan vaihtamaan kuulumisia?",
+        "kesto": 5,
+        "vaihtoehdot":
+        [
+            {
+                "valinta":"lähden!",
+                "efekti":
+                {
+                    "motivaatio":60,
+                    "terveys":-40
+                }
+            },
+            {
+                "valinta":"ei ehdi tänään!",
+                "efekti":
+                {
+                    "motivaatio":-50
+                }
+            }
+        ]
+    }
+]
