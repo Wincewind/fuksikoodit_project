@@ -2,6 +2,7 @@
     {
         "nimi":"JTKT",
         "op":5,
+        "periodi": 1,
         "maksimipisteet": 100,
         "luennot":["ma", "ti"],
         "palautukset":["ma"],
@@ -10,6 +11,16 @@
     {
         "nimi":"JYM",
         "op":5,
+        "periodi": 1,
+        "maksimipisteet": 120,
+        "luennot":["ke", "to"],
+        "palautukset":["pe"],
+        "tentti": true
+    },
+    {
+        "nimi":"OHJA",
+        "op":5,
+        "periodi": 2,
         "maksimipisteet": 120,
         "luennot":["ke", "to"],
         "palautukset":["pe"],
