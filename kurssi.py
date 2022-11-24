@@ -45,6 +45,10 @@ class Kurssi:
             if periodi == json['periodi']:
                 self.loppupaiva = paiva-1
 
+        palautuksen_pisteet = self.maksimipisteet/len(self.palautukset)
+
+        for palautus in self.palautukset:
+            palautus.pisteet = palautuksen_pisteet
 
         self.tentti = 0
 
@@ -61,6 +65,16 @@ class Kurssi:
 
     def lopeta_kurssi(self):
         pass
+
+    def palauta(self, paiva):
+        palautus = self.palautukset.get(paiva,None)
+        if palautus:
+            palautus.palautettu = True
+            kerroin = self.kaytetyt_tunnit/5
+            if kerroin < 1:
+                palautus.pisteet *= kerroin
+            self.kaytetyt_tunnit = 0
+
 
     arvosana = property(get_arvosana)
 
