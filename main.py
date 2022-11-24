@@ -67,24 +67,33 @@ def setup():
         for kurssi in kurssit:
             KURSSIT.append(Kurssi(kurssi))
 
+#palauttaa unen määrän
 def maarita_kursseihin_kautettava_aika(opiskelija,nykyinen_pv):
+    paivan_tunnit = 24
     for kurssi in opiskelija.kurssit_meneillään:
-        opiskeluun_kaytetty_aika = 0
-        print(f'Määritä kurssin: {kurssi.nimi} panos:')
-        if nykyinen_pv in kurssi.luennot:
+        print(f'Määritä kurssin {kurssi.nimi} panos:')
+        if nykyinen_pv in kurssi.luennot and paivan_tunnit >= 2:
             while True:
                 print('Osallistutko päivän luennolle?')
                 valinta = input('Y/N: ')
-                if valinta == 'Y':
-                    opiskeluun_kaytetty_aika += 2
+                if valinta == 'Y' and op:
+                    paivan_tunnit -= 2
+                    kurssi.kayta_aikaa(2)
+                    break
+                elif valinta == 'N':
                     break
             
             while True:
                 try:
-                    harjoituksiin_kaytetty_aika = int(input('Paljon aikaa aiot käyttää tämän viikon palautuksiin?'))
-                    opiskeluun_kaytetty_aika += harjoituksiin_kaytetty_aika
+                    harjoituksiin_kaytetty_aika = int(input('Paljon aikaa aiot käyttää tämän viikon palautuksiin? Jäljellä olevaan allokoitavaa aikaa on: {paivan_tunnit}'))
+                    if harjoituksiin_kaytetty_aika > paivan_tunnit:
+                        pass
+                    else:
+                        kurssi.kayta_aikaa(harjoituksiin_kaytetty_aika)
+                        paivan_tunnit -= harjoituksiin_kaytetty_aika
                 except:
                     pass
+        return paivan_tunnit
 
 
 def main():
