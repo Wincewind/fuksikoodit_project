@@ -7,6 +7,7 @@ import json
 from kurssi import Kurssi
 from opiskelija import Opiskelija
 import weekController
+import os
 
 
 def alusta_periodi(numero):
@@ -40,10 +41,18 @@ def day():
     weekController.printPäivä()
 
     #Tulostaa käytössä olevat tunnit
+    unen_maara = maarita_kursseihin_kautettava_aika(OPISKELIJA, PÄIVÄ)
 
+    #Laskee nukkumiseen jäävän ajan ja kysyy kuinka paljon haluaa käyttää
+    print(f"Nukkumiseen aikaa jäi {unen_maara} tuntia")
+    if unen_maara<6:
+        OPISKELIJA.terveys -= 10
+    elif unen_maara > 6:
+        OPISKELIJA.terveys += 10 * (unen_maara-6)
 
     #kysyy ajan allokointia kurssi kerrallaan ja käytökö luennolla
-    #Laskee nukkumiseen jäävän ajan ja kysyy kuinka paljon haluaa käyttää
+
+    os.system('clear')
 
 def setup():
     nimi = input('Ketä oot:')
@@ -87,5 +96,10 @@ def main():
     print('-'*80)
     print('Opiskelijan seikkailu game 2022')
     print('-'*80)
+
+    setup()
+
+    while PÄIVÄ < 241:
+        day()
 
 main()
